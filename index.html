@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Djiehi & Selim — 17 Mai 2026</title>
+  <title>Noëlle &amp; Pierre-Isaac — 16 Mai 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
@@ -17,20 +17,18 @@
       background: #0a0a0a;
       color: #8B6340;
       overflow-x: hidden;
-      /* Block scroll while intro plays */
       overflow-y: hidden;
     }
     body.intro-done { overflow-y: auto; }
 
     /* ─────────────────────────────────────────
-       PHASE 1 — INTRO SCREEN
+       PHASE 1  INTRO SCREEN
     ───────────────────────────────────────── */
     #intro-screen {
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       width: 100vw;
-      /* Fallback chain: dvh → CSS var → webkit → vh */
       height: 100vh;
       height: 100dvh;
       height: calc(var(--vh, 1vh) * 100);
@@ -46,14 +44,12 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      /* Ensure cover on all browsers including older Safari */
       object-fit: cover;
       object-position: center center;
       -o-object-fit: cover;
       -o-object-position: center center;
     }
 
-    /* Dark vignette overlay */
     #intro-overlay {
       position: absolute;
       inset: 0;
@@ -117,10 +113,8 @@
       50% { transform: translateY(-8px); }
     }
 
-    /* Hide hint once playing */
     #intro-screen.playing #intro-overlay { opacity: 0; pointer-events: none; }
 
-    /* Fade out intro screen */
     #intro-screen.fade-out {
       animation: introFadeOut 1.2s forwards;
     }
@@ -130,7 +124,7 @@
     }
 
     /* ─────────────────────────────────────────
-       MAIN CONTENT (hidden until intro ends)
+       MAIN CONTENT
     ───────────────────────────────────────── */
     #main-content {
       opacity: 0;
@@ -139,7 +133,7 @@
     #main-content.visible { opacity: 1; }
 
     /* ─────────────────────────────────────────
-       PHASE 2 — HERO / FIRST VOLET
+       PHASE 2 — HERO
     ───────────────────────────────────────── */
     #phase2 {
       position: relative;
@@ -161,7 +155,6 @@
       object-position: center;
     }
 
-    /* subtle dark veil over bg video */
     .phase2-veil {
       position: absolute;
       inset: 0;
@@ -266,7 +259,6 @@
       animation-delay: 1.1s;
     }
 
-    /* scroll indicator */
     .scroll-cue {
       position: absolute;
       bottom: 2.5rem;
@@ -310,7 +302,6 @@
       width: 100%;
       padding: 0;
       overflow: hidden;
-      /* height driven by content, not too tall */
     }
 
     .phase3-bg {
@@ -322,7 +313,6 @@
       filter: brightness(0.88);
     }
 
-    /* content card sits centered on the image */
     .phase3-card {
       position: relative;
       z-index: 2;
@@ -365,7 +355,6 @@
       margin-bottom: 2.8rem;
     }
 
-    /* countdown boxes */
     .countdown-wrap {
       display: flex;
       align-items: center;
@@ -438,7 +427,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Intersection Observer reveal */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -449,7 +437,6 @@
       transform: translateY(0);
     }
 
-    /* ─── MOBILE TWEAKS ─── */
     @media (max-width: 480px) {
       .phase2-divider span.line { width: 32px; }
     }
@@ -459,7 +446,7 @@
     ══════════════════════════════════════════ */
     #phase4 {
       background: #faf7f3;
-      padding: 6rem 1.5rem 3rem;
+      padding: 6rem 1.5rem 1.5rem;
       text-align: center;
       overflow: hidden;
     }
@@ -499,9 +486,13 @@
       margin: 0 auto 3.5rem;
       white-space: pre-line;
     }
-    /* carousel */
     .carousel-track-wrap {
-      width: 100%;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       overflow: hidden;
       padding: 20px 0 30px;
     }
@@ -551,7 +542,7 @@
     ══════════════════════════════════════════ */
     #phase5 {
       background: #fff8f0;
-      padding: 5.5rem 1.5rem 5rem;
+      padding: 3rem 1.5rem 2.5rem;
       text-align: center;
     }
     .p5-label {
@@ -581,31 +572,13 @@
       aspect-ratio: 16/9;
     }
     .p5-map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
-    .p5-qr-label {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.78rem, 2vw, 0.9rem);
-      color: #6b4f35;
-      letter-spacing: 0.05em;
-      line-height: 1.7;
-      max-width: 420px;
-      margin: 0 auto 1.8rem;
-    }
-    .p5-qr-img {
-      display: block;
-      width: clamp(120px, 32vw, 180px);
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(139,99,64,0.2), 0 4px 10px rgba(0,0,0,0.08);
-      animation: floatCard 5s ease-in-out infinite;
-    }
 
     /* ══════════════════════════════════════════
-       PHASE 6 — PROGRAMME (redesign)
+       PHASE 6 — PROGRAMME
     ══════════════════════════════════════════ */
     #phase6 {
       background: linear-gradient(170deg, #fff8f0 0%, #faf4ec 60%, #f5ede0 100%);
-      padding: 6rem 1.5rem 6rem;
+      padding: 3rem 1.5rem 5rem;
       overflow: hidden;
     }
     .p6-inner {
@@ -641,14 +614,12 @@
     .p6-ornament span.r { display: block; height: 1px; width: clamp(30px,10vw,70px); background: linear-gradient(to left, transparent, rgba(139,99,64,0.4)); }
     .p6-ornament span.d { width: 6px; height: 6px; border-radius: 50%; background: #8B6340; opacity: 0.5; }
 
-    /* Timeline */
     .timeline {
       position: relative;
       display: flex;
       flex-direction: column;
       gap: 0;
     }
-    /* Vertical stem */
     .timeline::before {
       content: '';
       position: absolute;
@@ -665,7 +636,6 @@
       align-items: center;
       gap: 0 0;
       margin-bottom: 1.4rem;
-      /* animation */
       opacity: 0;
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
@@ -673,7 +643,6 @@
     .tl-item:nth-child(even) { transform: translateX( 40px); }
     .tl-item.in-view { opacity: 1; transform: translateX(0); }
 
-    /* Time badge — left column for odd, right for even */
     .tl-time {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -686,7 +655,6 @@
     .tl-item:nth-child(odd)  .tl-time { text-align: right; padding-right: 1.2rem; }
     .tl-item:nth-child(even) .tl-time { text-align: left;  padding-left: 1.2rem; grid-column: 3; grid-row: 1; }
 
-    /* Dot on the stem */
     .tl-dot {
       display: flex;
       align-items: center;
@@ -702,7 +670,6 @@
       flex-shrink: 0;
     }
 
-    /* Card — right for odd, left for even */
     .tl-card {
       background: #fff;
       border-radius: 14px;
@@ -722,7 +689,6 @@
       line-height: 1.55;
     }
 
-    /* Mobile: single column */
     @media (max-width: 520px) {
       .timeline::before { left: 14px; transform: none; }
       .tl-item {
@@ -775,14 +741,14 @@
     #sound-btn.muted .icon-off { display: block; }
 
     /* ══════════════════════════════════════════
-       PHASE 7 — FORMULAIRE RSVP
+       SECTION CONTACTS
     ══════════════════════════════════════════ */
-    #phase7 {
+    #contacts {
       background: #faf7f3;
-      padding: 6rem 1.5rem 4rem;
+      padding: 5.5rem 1.5rem 5rem;
+      text-align: center;
     }
-    .p7-inner { max-width: 600px; margin: 0 auto; text-align: center; }
-    .p7-label {
+    .contacts-label {
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
       font-size: clamp(0.6rem, 1.8vw, 0.75rem);
@@ -792,126 +758,52 @@
       opacity: 0.65;
       margin-bottom: 0.6rem;
     }
-    .p7-title {
+    .contacts-title {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.8rem, 9vw, 5rem);
       color: #8B6340;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 2rem;
     }
-    .p7-sub {
+    .contacts-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 32px rgba(139,99,64,0.12);
+      border-top: 3px solid rgba(139,99,64,0.3);
+      min-width: 220px;
+      flex: 1;
+    }
+    .contact-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      color: #8B6340;
+      margin-bottom: 0.7rem;
+      text-transform: uppercase;
+    }
+    .contact-phone {
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
-      font-size: clamp(0.78rem, 2vw, 0.9rem);
-      color: #8B6340;
-      opacity: 0.7;
-      letter-spacing: 0.08em;
-      margin-bottom: 3rem;
-    }
-    .rsvp-form {
-      background: #fff;
-      border-radius: 20px;
-      padding: clamp(1.5rem, 5vw, 2.5rem);
-      box-shadow: 0 12px 40px rgba(139,99,64,0.1);
-      text-align: left;
-    }
-    .form-group { margin-bottom: 1.6rem; }
-    .form-label {
+      font-size: 1rem;
+      color: #4a3220;
+      text-decoration: none;
       display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      color: #8B6340;
-      margin-bottom: 0.8rem;
+      transition: color 0.2s;
     }
-    .form-label .req { color: #c0392b; margin-left: 3px; }
-    .radio-group { display: flex; flex-direction: column; gap: 0.7rem; }
-    .radio-option {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 0.85rem 1.1rem;
-      border: 1.5px solid rgba(139,99,64,0.2);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .radio-option.selected { border-color: #8B6340; background: rgba(139,99,64,0.05); }
-    .radio-option input[type="radio"] { display: none; }
-    .radio-dot {
-      width: 18px; height: 18px; border-radius: 50%;
-      border: 2px solid rgba(139,99,64,0.4);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; transition: border-color 0.2s; position: relative;
-    }
-    .radio-option.selected .radio-dot { border-color: #8B6340; }
-    .radio-dot::after {
-      content: ''; position: absolute;
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #8B6340; opacity: 0; transform: scale(0);
-      transition: opacity 0.2s, transform 0.2s;
-    }
-    .radio-option.selected .radio-dot::after { opacity: 1; transform: scale(1); }
-    .radio-text { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 0.85rem; color: #4a3220; }
-    /* stepper */
-    .stepper {
-      display: flex; align-items: center;
-      border: 1.5px solid rgba(139,99,64,0.25);
-      border-radius: 10px; overflow: hidden; width: fit-content;
-    }
-    .stepper button {
-      background: none; border: none;
-      width: 44px; height: 44px; font-size: 1.3rem; color: #8B6340;
-      cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 300;
-      transition: background 0.15s;
-    }
-    .stepper button:hover { background: rgba(139,99,64,0.08); }
-    .stepper-val {
-      width: 44px; text-align: center;
-      font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1rem; color: #8B6340;
-      border-left: 1.5px solid rgba(139,99,64,0.2); border-right: 1.5px solid rgba(139,99,64,0.2);
-    }
-    .form-input {
-      width: 100%; padding: 0.75rem 1rem;
-      border: 1.5px solid rgba(139,99,64,0.2); border-radius: 10px;
-      font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 0.88rem; color: #4a3220;
-      background: #fff; outline: none; transition: border-color 0.2s; box-sizing: border-box;
-    }
-    .form-input:focus { border-color: #8B6340; }
-    .form-input::placeholder { color: rgba(139,99,64,0.4); }
-    textarea.form-input { resize: vertical; min-height: 110px; }
-    .persons-wrap { display: flex; flex-direction: column; gap: 1.1rem; }
-    .person-card {
-      background: rgba(139,99,64,0.04);
-      border: 1px solid rgba(139,99,64,0.12);
-      border-radius: 12px; padding: 1rem;
-    }
-    .person-card-title {
-      font-family: 'Montserrat', sans-serif; font-weight: 500;
-      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: #8B6340; margin-bottom: 0.8rem; opacity: 0.8;
-    }
-    .person-fields { display: flex; flex-direction: column; gap: 0.6rem; }
-    .btn-submit {
-      display: block; width: 100%; padding: 1rem;
-      background: #8B6340; color: #fff; border: none; border-radius: 12px;
-      font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.88rem;
-      letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; margin-top: 2rem;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-submit:hover { background: #6b4f35; transform: translateY(-1px); }
-    .form-success { display: none; text-align: center; padding: 2rem 1rem; }
-    .form-success.show { display: block; }
-    .form-success .checkmark { font-size: 3rem; margin-bottom: 1rem; }
-    .form-success p {
-      font-family: 'Montserrat', sans-serif; font-weight: 300;
-      color: #8B6340; font-size: 0.9rem; line-height: 1.7;
-    }
-    .p7-vec { display: block; margin: 2.5rem auto 0; width: clamp(80px, 28vw, 180px); opacity: 0.7; }
+    .contact-phone:hover { color: #8B6340; }
 
     /* ══════════════════════════════════════════
-       PHASE 8 — FOOTER
+       FOOTER
     ══════════════════════════════════════════ */
     #footer {
       background: #8B6340;
@@ -941,11 +833,9 @@
 
   <!-- ── BOUTON SON (fixed, visible après intro) ── -->
   <button id="sound-btn" aria-label="Couper / activer la musique">
-    <!-- icon son ON -->
     <svg class="icon-on" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.06A4.5 4.5 0 0 0 16.5 12zm2.5 0a7 7 0 0 0-5-6.71v2.09A5 5 0 0 1 21 12a5 5 0 0 1-4 4.9v2.09A7 7 0 0 0 22 12z"/>
     </svg>
-    <!-- icon son OFF (mute) -->
     <svg class="icon-off" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.8 8.8 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zm-14.07-9.4L3.27 4.27 7 8H3v8h4l5 5v-6.73l4.25 4.25A6.98 6.98 0 0 1 14 19.54v2.09a8.99 8.99 0 0 0 4.46-2.55l2.13 2.13 1.27-1.27L4.93 2.6zM12 4L9.91 6.09 12 8.18V4z"/>
     </svg>
@@ -966,7 +856,6 @@
     <div id="intro-overlay">
       <div id="tap-hint">
         <div class="tap-icon">
-          <!-- finger tap icon -->
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 3a2 2 0 0 1 2 2v6.184A3 3 0 0 1 15 14v2a6 6 0 0 1-12 0v-4a2 2 0 0 1 3-1.732V5a2 2 0 0 1 2-2zm0 2v6h-.5a.5.5 0 0 0-.5.5V16a4 4 0 0 0 8 0v-2a1 1 0 0 0-2 0v.5a.5.5 0 0 1-1 0V5a.5.5 0 0 0-.5-.5A.5.5 0 0 0 12 5v6.5a.5.5 0 0 1-1 0V5a.5.5 0 0 0-.5-.5A.5.5 0 0 0 9 5z"/>
           </svg>
@@ -976,7 +865,7 @@
     </div>
   </div>
 
-  <!-- background music (hidden) -->
+  <!-- background music -->
   <audio id="bg-music" src="ressource/MUSIC.mp3" loop></audio>
 
   <!-- ══════════════════════════════════════════
@@ -984,7 +873,7 @@
   ══════════════════════════════════════════ -->
   <div id="main-content">
 
-    <!-- ── PHASE 2 ── -->
+    <!-- ── PHASE 2 — HERO ── -->
     <section id="phase2">
       <video
         id="bg-video"
@@ -1001,14 +890,14 @@
         <p class="phase2-tagline">Deux cœurs, une promesse</p>
 
         <div class="phase2-names-wrapper">
-          <!-- BRIDE -->
-          <span class="phase2-firstname">Djiehi</span>
-          <span class="phase2-lastname">Bodjehan</span>
+          <!-- MARIÉE -->
+          <span class="phase2-firstname">Noëlle</span>
+          <span class="phase2-lastname">Djiehi</span>
 
           <span class="phase2-ampersand">&amp;</span>
 
-          <!-- GROOM -->
-          <span class="phase2-firstname">Selim</span>
+          <!-- MARIÉ -->
+          <span class="phase2-firstname">Pierre-Isaac</span>
           <span class="phase2-lastname">Camara</span>
         </div>
 
@@ -1018,49 +907,12 @@
           <span class="line"></span>
         </div>
 
-        <p class="phase2-date">17 &nbsp;·&nbsp; Mai &nbsp;·&nbsp; 2026</p>
+        <p class="phase2-date">16 &nbsp;·&nbsp; Mai &nbsp;·&nbsp; 2026</p>
       </div>
 
       <div class="scroll-cue">
         <span>Défiler</span>
         <div class="arrow"></div>
-      </div>
-    </section>
-
-    <!-- ── PHASE 3 ── -->
-    <section id="phase3">
-      <div class="phase3-bg"></div>
-      <div class="phase3-card">
-        <p class="phase3-pretitle reveal">Le grand jour approche</p>
-        <h2 class="phase3-title reveal">Compte à rebours</h2>
-        <p class="phase3-sub reveal">jusqu'au 17 Mai 2026</p>
-
-        <div class="countdown-wrap reveal">
-          <div class="countdown-item">
-            <div class="countdown-box">
-              <span class="countdown-number" id="cd-days">--</span>
-            </div>
-            <span class="countdown-label">Jours</span>
-          </div>
-
-          <div class="countdown-sep">|</div>
-
-          <div class="countdown-item">
-            <div class="countdown-box">
-              <span class="countdown-number" id="cd-hours">--</span>
-            </div>
-            <span class="countdown-label">Heures</span>
-          </div>
-
-          <div class="countdown-sep">|</div>
-
-          <div class="countdown-item">
-            <div class="countdown-box">
-              <span class="countdown-number" id="cd-minutes">--</span>
-            </div>
-            <span class="countdown-label">Minutes</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1101,7 +953,43 @@ scellant l'union de leurs enfants.</p>
         </div>
       </div>
 
-      <img src="ressource/vec 2.png" alt="" class="p4-flower reveal" />
+    </section>
+
+    <!-- ── PHASE 3 — COMPTE À REBOURS ── -->
+    <section id="phase3">
+      <div class="phase3-bg"></div>
+      <div class="phase3-card">
+        <p class="phase3-pretitle reveal">Le grand jour approche</p>
+        <h2 class="phase3-title reveal">Compte à rebours</h2>
+        <p class="phase3-sub reveal">jusqu'au 16 Mai 2026</p>
+
+        <div class="countdown-wrap reveal">
+          <div class="countdown-item">
+            <div class="countdown-box">
+              <span class="countdown-number" id="cd-days">--</span>
+            </div>
+            <span class="countdown-label">Jours</span>
+          </div>
+
+          <div class="countdown-sep">|</div>
+
+          <div class="countdown-item">
+            <div class="countdown-box">
+              <span class="countdown-number" id="cd-hours">--</span>
+            </div>
+            <span class="countdown-label">Heures</span>
+          </div>
+
+          <div class="countdown-sep">|</div>
+
+          <div class="countdown-item">
+            <div class="countdown-box">
+              <span class="countdown-number" id="cd-minutes">--</span>
+            </div>
+            <span class="countdown-label">Minutes</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ══════════════════════════════════════════
@@ -1110,22 +998,18 @@ scellant l'union de leurs enfants.</p>
     <section id="phase5">
       <p class="p5-label reveal">Où nous retrouver</p>
       <h2 class="p5-title reveal">Localisation</h2>
-
       <div class="p5-map-wrap reveal">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15527.94!2d-4.7122337!3d6.6574752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc73f35a6c63231%3A0x9388740092daef44!2sDimbokro%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sfr!2sfr!4v1700000000000"
+          src="https://maps.google.com/maps?q=Hotel+Mirabelle+Dimbokro+Cote+d%27Ivoire&output=embed"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-
-      <p class="p5-qr-label reveal">Veuillez scanner le code QR pour avoir accès directement à la localisation sur votre téléphone.</p>
-      <img src="ressource/qrcode.png" alt="QR Code localisation" class="p5-qr-img reveal" />
     </section>
 
     <!-- ══════════════════════════════════════════
-         PHASE 6 — PROGRAMME (timeline)
+         PHASE 6 — PROGRAMME
     ══════════════════════════════════════════ -->
     <section id="phase6">
       <div class="p6-inner">
@@ -1139,158 +1023,121 @@ scellant l'union de leurs enfants.</p>
           <div class="tl-item">
             <span class="tl-time">07h00 – 08h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Accueil et installation de la belle famille</p></div>
+            <div class="tl-card"><p class="tl-desc">Accueil et installation de la belle-famille au domicile des parents de la mariée</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">08h00 – 08h30</span>
+            <span class="tl-time">08h00 – 08h05</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Cordialités</p></div>
+            <div class="tl-card"><p class="tl-desc">Prière d'ouverture — Bénédiction de la cérémonie</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">08h30 – 08h35</span>
+            <span class="tl-time">08h05 – 10h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Prière de début de la cérémonie traditionnelle</p></div>
+            <div class="tl-card"><p class="tl-desc">Cérémonie traditionnelle : prise de parole des porte-paroles, dialogue coutumier et validation, présentation officielle des mariés, acceptation de l'union</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">08h30 – 10h30</span>
+            <span class="tl-time">10h00 – 10h05</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Cérémonie traditionnelle + présentation des mariés</p></div>
+            <div class="tl-card"><p class="tl-desc">Prière de clôture</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">10h30 – 10h35</span>
+            <span class="tl-time">10h05 – 11h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Prière de fin de la cérémonie</p></div>
+            <div class="tl-card"><p class="tl-desc">Remerciements, salutations</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">10h35 – 11h30</span>
+            <span class="tl-time">11h00 – 12h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Remerciements et séance de photos</p></div>
+            <div class="tl-card"><p class="tl-desc">Installation des invités sur le lieu de la réception — Hôtel Mirabelle</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">11h30 – 12h30</span>
+            <span class="tl-time">12h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Ouverture du buffet de l'apéro et animation</p></div>
+            <div class="tl-card"><p class="tl-desc">Ouverture du buffet apéritif &amp; animation — Service de rafraîchissements, ambiance musicale</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">12h30 – 12h50</span>
+            <span class="tl-time">12h00 – 12h10</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Arrivée des mariés et installation avec les danseurs</p></div>
+            <div class="tl-card"><p class="tl-desc">Arrivée et entrée des mariés — 1ère tenue, accompagnés par les danseurs — Installation à la table d'honneur</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">12h50 – 12h55</span>
+            <span class="tl-time">12h10 – 12h15</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Prière nourriture</p></div>
+            <div class="tl-card"><p class="tl-desc">Bénédiction du repas</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">12h55 – 14h00</span>
+            <span class="tl-time">12h15 – 12h25</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Nourriture</p></div>
+            <div class="tl-card"><p class="tl-desc">Prestation de la chantre Dame Konan</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">14h00 – 14h30</span>
+            <span class="tl-time">12h25</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Arrivée des mariés — deuxième tenue (passage avec panier)</p></div>
+            <div class="tl-card"><p class="tl-desc">Début du service du repas — Déjeuner avec animation musicale (Dame Konan)</p></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">13h00 – 13h30</span>
+            <span class="tl-dot"></span>
+            <div class="tl-card"><p class="tl-desc">Entrée des mariés — 2ème tenue (tenue yacouba), groupe artistique, passage symbolique (panier, dons), interaction avec les invités</p></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-time">13h30 – 14h30</span>
+            <span class="tl-dot"></span>
+            <div class="tl-card"><p class="tl-desc">Ambiance &amp; animation — Danses, participation des invités</p></div>
           </div>
           <div class="tl-item">
             <span class="tl-time">14h30 – 15h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Ambiance</p></div>
+            <div class="tl-card"><p class="tl-desc">Entrée des mariés — 3ème tenue suivi de la découpe du gâteau</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">15h00 – 15h30</span>
+            <span class="tl-time">15h00 – 15h45</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Entrée mariée troisième tenue et ambiance</p></div>
+            <div class="tl-card"><p class="tl-desc">Distribution des dragées et ambiance</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">15h30 – 15h50</span>
+            <span class="tl-time">15h45 – 16h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Coupée de gâteau</p></div>
+            <div class="tl-card"><p class="tl-desc">Entrée des mariés — 4ème tenue (Boubou sénégalais) et ambiance</p></div>
           </div>
           <div class="tl-item">
-            <span class="tl-time">15h50 – 16h20</span>
+            <span class="tl-time">16h00</span>
             <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Partage de présents aux invités</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-time">16h20 – 16h50</span>
-            <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Accompagnement et au revoir</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-time">16h50 – …</span>
-            <span class="tl-dot"></span>
-            <div class="tl-card"><p class="tl-desc">Ambiance</p></div>
+            <div class="tl-card"><p class="tl-desc">Remerciements &amp; clôture — Mot de fin des mariés et des familles, départ progressif des invités</p></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════
-         PHASE 7 — FORMULAIRE RSVP
+         CONTACTS
     ══════════════════════════════════════════ -->
-    <section id="phase7">
-      <div class="p7-inner">
-        <p class="p7-label reveal">Votre réponse</p>
-        <h2 class="p7-title reveal">RSVP</h2>
-        <p class="p7-sub reveal">Confirmez votre présence avant le 1er mai 2026</p>
-
-        <form class="rsvp-form reveal" id="rsvp-form" target="_blank" method="POST"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSeI0NTclhG3uKnXAX4hDmmLKFyPrMZyW-tsiRcnIektwZ6MdQ/formResponse">
-
-          <!-- Q1 — Présence -->
-          <div class="form-group">
-            <label class="form-label">Serez-vous présent(e) ?<span class="req">*</span></label>
-            <div class="radio-group">
-              <label class="radio-option" id="opt-yes">
-                <input type="radio" name="entry.462191539" value="Oui, je serai présent(e)" required />
-                <span class="radio-dot"></span>
-                <span class="radio-text">Oui, je serai présent(e)</span>
-              </label>
-              <label class="radio-option" id="opt-no">
-                <input type="radio" name="entry.462191539" value="Malheureusement, je ne pourrai pas venir" />
-                <span class="radio-dot"></span>
-                <span class="radio-text">Malheureusement, je ne pourrai pas venir</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Q2 — Personnes (masqué si absent) -->
-          <div class="form-group" id="group-persons">
-            <label class="form-label">Combien de personnes vous accompagneront ?</label>
-            <div class="stepper">
-              <button type="button" id="btn-minus">−</button>
-              <span class="stepper-val" id="stepper-display">1</span>
-              <button type="button" id="btn-plus">+</button>
-            </div>
-          </div>
-
-          <!-- Champs dynamiques personnes -->
-          <div class="persons-wrap" id="persons-wrap"></div>
-
-          <!-- Q3 — Message -->
-          <div class="form-group">
-            <label class="form-label">Laissez un message aux futurs mariés</label>
-            <textarea class="form-input" name="entry.1972128814" placeholder="Y a-t-il quelque chose que vous aimeriez nous dire ?"></textarea>
-          </div>
-
-          <button type="submit" class="btn-submit">Envoyer</button>
-        </form>
-
-        <div class="form-success" id="form-success">
-          <div class="checkmark">💌</div>
-          <p>Merci pour votre réponse !<br>Nous sommes impatients de vous retrouver.</p>
+    <section id="contacts">
+      <p class="contacts-label reveal">Pour toute question</p>
+      <h2 class="contacts-title reveal">Contacts</h2>
+      <div class="p4-divider reveal">
+        <span class="line"></span>
+        <span class="dot"></span>
+        <span class="line"></span>
+      </div>
+      <div class="contacts-grid reveal">
+        <div class="contact-card">
+          <p class="contact-name">Madame SUY</p>
+          <a class="contact-phone" href="tel:+2250777211903">+225 07 77 211 903</a>
         </div>
-
-        <img src="ressource/vec 1.png" alt="" class="p7-vec" />
+        <div class="contact-card">
+          <p class="contact-name">Priam SAUCIÉ</p>
+          <a class="contact-phone" href="tel:+2250778118384">+225 07 78 118 384</a>
+        </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════
-         PHASE 8 — FOOTER
+         FOOTER
     ══════════════════════════════════════════ -->
     <footer id="footer">
-      <div class="footer-names">Djiehi &amp; Selim</div>
-      <p class="footer-date">17 &nbsp;·&nbsp; Mai &nbsp;·&nbsp; 2026</p>
+      <div class="footer-names">Noëlle &amp; Pierre-Isaac</div>
+      <p class="footer-date">16 &nbsp;·&nbsp; Mai &nbsp;·&nbsp; 2026</p>
       <div class="footer-divider"></div>
       <p class="footer-credit">Made with love by <strong>Goldenxys</strong></p>
     </footer>
@@ -1298,21 +1145,13 @@ scellant l'union de leurs enfants.</p>
   </div><!-- /main-content -->
 
   <script>
-    /* ────────────────────────────────
-       VIEWPORT HEIGHT FIX (iOS Safari)
-       Sets --vh to the real inner height,
-       ignoring the browser toolbar.
-    ──────────────────────────────── */
     function setVh() {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', vh + 'px');
     }
     setVh();
     window.addEventListener('resize', setVh);
-    // Also fire on orientation change (mobile)
-    window.addEventListener('orientationchange', () => {
-      setTimeout(setVh, 150);
-    });
+    window.addEventListener('orientationchange', () => { setTimeout(setVh, 150); });
 
     /* ────────────────────────────────
        PHASE 1 — INTRO LOGIC
@@ -1329,24 +1168,20 @@ scellant l'union de leurs enfants.</p>
 
       introScreen.classList.add('playing');
 
-      // reset video to start
       introVideo.currentTime = 0;
       introVideo.play().catch(() => {});
 
-      // reset music to start and play every time, no exception
       bgMusic.currentTime = 0;
       bgMusic.volume = 0;
       bgMusic.play().then(() => {
         fadeInAudio(bgMusic, 0.72, 2500);
       }).catch(() => {
-        // retry once on failure (some mobile browsers need a tiny delay)
         setTimeout(() => {
           bgMusic.play().catch(() => {});
           fadeInAudio(bgMusic, 0.72, 2500);
         }, 300);
       });
 
-      // when intro video ends → reveal main content
       introVideo.addEventListener('ended', showMainContent);
     }
 
@@ -1380,7 +1215,7 @@ scellant l'union de leurs enfants.</p>
     /* ────────────────────────────────
        PHASE 3 — COUNTDOWN
     ──────────────────────────────── */
-    const TARGET = new Date('2026-05-17T00:00:00').getTime();
+    const TARGET = new Date('2026-05-16T00:00:00').getTime();
 
     function updateCountdown() {
       const now  = Date.now();
@@ -1418,7 +1253,6 @@ scellant l'union de leurs enfants.</p>
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    /* Timeline items — staggered slide-in from sides */
     const tlObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -1439,83 +1273,6 @@ scellant l'union de leurs enfants.</p>
       isMuted = !isMuted;
       bgMusic.muted = isMuted;
       soundBtn.classList.toggle('muted', isMuted);
-    });
-
-    /* ────────────────────────────────
-       PHASE 7 — RSVP FORM LOGIC
-    ──────────────────────────────── */
-    const optYes       = document.getElementById('opt-yes');
-    const optNo        = document.getElementById('opt-no');
-    const groupPersons = document.getElementById('group-persons');
-    const personsWrap  = document.getElementById('persons-wrap');
-    const btnMinus     = document.getElementById('btn-minus');
-    const btnPlus      = document.getElementById('btn-plus');
-    const stepDisplay  = document.getElementById('stepper-display');
-    const rsvpForm     = document.getElementById('rsvp-form');
-    const formSuccess  = document.getElementById('form-success');
-
-    /* Entry names for persons (name + phone for person 1, name-only for 2-10) */
-    const entryNames = [
-      { name: 'entry.685652587', phone: 'entry.980483347' }, // person 1
-      { name: 'entry.243742624' },
-      { name: 'entry.981830722' },
-      { name: 'entry.1663430985' },
-      { name: 'entry.1995625278' },
-      { name: 'entry.1755315796' },
-      { name: 'entry.785635617' },
-      { name: 'entry.109898589' },
-      { name: 'entry.1284129903' },
-      { name: 'entry.52589220' },
-    ];
-
-    let personCount = 1;
-
-    function buildPersonCards(count) {
-      personsWrap.innerHTML = '';
-      for (let i = 0; i < count; i++) {
-        const entry = entryNames[i];
-        const isMain = i === 0;
-        const card = document.createElement('div');
-        card.className = 'person-card';
-        card.innerHTML = `
-          <div class="person-card-title">${isMain ? 'Personne 1 (Contact principal)' : 'Personne ' + (i + 1)}</div>
-          <div class="person-fields">
-            <input class="form-input" type="text" name="${entry.name}" placeholder="Nom complet" ${isMain ? 'required' : ''} />
-            ${isMain ? `<input class="form-input" type="tel" name="${entry.phone}" placeholder="Numéro de téléphone" required />` : ''}
-          </div>`;
-        personsWrap.appendChild(card);
-      }
-    }
-
-    buildPersonCards(1);
-
-    btnMinus.addEventListener('click', () => {
-      if (personCount > 1) { personCount--; stepDisplay.textContent = personCount; buildPersonCards(personCount); }
-    });
-    btnPlus.addEventListener('click', () => {
-      if (personCount < 10) { personCount++; stepDisplay.textContent = personCount; buildPersonCards(personCount); }
-    });
-
-    /* Radio toggle — show/hide person fields */
-    function handleRadio(selected, other, show) {
-      selected.classList.add('selected');
-      other.classList.remove('selected');
-      groupPersons.style.display  = show ? '' : 'none';
-      personsWrap.style.display   = show ? '' : 'none';
-    }
-
-    optYes.addEventListener('click', () => handleRadio(optYes, optNo, true));
-    optNo.addEventListener('click',  () => handleRadio(optNo, optYes, false));
-
-    /* Form submit → open Google Form in background, show success */
-    rsvpForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(rsvpForm);
-      fetch(rsvpForm.action, { method: 'POST', body: data, mode: 'no-cors' })
-        .finally(() => {
-          rsvpForm.style.display = 'none';
-          formSuccess.classList.add('show');
-        });
     });
   </script>
 </body>
