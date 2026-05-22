@@ -307,7 +307,7 @@
     .phase3-bg {
       position: absolute;
       inset: 0;
-      background-image: url('ressource/design section 3.png');
+      background-image: url('ressource/FOND COMPTE A REBOURS.png');
       background-size: cover;
       background-position: center;
       filter: brightness(0.88);
@@ -485,6 +485,57 @@
       max-width: 580px;
       margin: 0 auto 3.5rem;
       white-space: pre-line;
+    }
+
+    /* ══════════════════════════════════════════
+       CAROUSEL PHOTOS
+    ══════════════════════════════════════════ */
+    .photos-carousel-wrap {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      overflow: hidden;
+      padding: 2rem 0 3rem;
+      background: #faf7f3;
+    }
+    .photos-carousel-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: carouselScroll 32s linear infinite;
+    }
+    .photos-carousel-track:hover { animation-play-state: paused; }
+    .photos-carousel-card {
+      width: clamp(180px, 38vw, 260px);
+      height: clamp(240px, 50vw, 340px);
+      border-radius: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 16px 44px rgba(139,99,64,0.2), 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .photos-carousel-card img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top; display: block;
+    }
+    @keyframes carouselScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════════════════
+       ICÔNES SÉPARATEURS
+    ══════════════════════════════════════════ */
+    .section-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.8rem 0;
+      background: #faf7f3;
+    }
+    .section-icon img {
+      width: clamp(60px, 18vw, 110px);
+      opacity: 0.9;
     }
 
     /* ══════════════════════════════════════════
@@ -725,41 +776,54 @@
        SECTION CONTACTS
     ══════════════════════════════════════════ */
     #contacts {
-      background: #faf7f3;
+      position: relative;
       padding: 5.5rem 1.5rem 5rem;
       text-align: center;
+      overflow: hidden;
     }
+    #contacts::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('ressource/FOND COMPTE A REBOURS.png');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.82);
+      z-index: 0;
+    }
+    #contacts > * { position: relative; z-index: 1; }
     .contacts-label {
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
       font-size: clamp(0.6rem, 1.8vw, 0.75rem);
       letter-spacing: 0.38em;
       text-transform: uppercase;
-      color: #8B6340;
-      opacity: 0.65;
+      color: rgba(255,255,255,0.75);
       margin-bottom: 0.6rem;
     }
     .contacts-title {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.8rem, 9vw, 5rem);
-      color: #8B6340;
+      color: #fff;
       line-height: 1;
       margin-bottom: 2rem;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.4);
     }
     .contacts-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
-      max-width: 600px;
+      max-width: 900px;
       margin: 0 auto;
     }
     .contact-card {
-      background: #fff;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
       border-radius: 16px;
       padding: 2rem 2.5rem;
-      box-shadow: 0 8px 32px rgba(139,99,64,0.12);
-      border-top: 3px solid rgba(139,99,64,0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+      border-top: 3px solid rgba(139,99,64,0.5);
       min-width: 220px;
       flex: 1;
     }
@@ -914,13 +978,38 @@ scellant l'union de leurs enfants.</p>
 
     </section>
 
+    <!-- ── CAROUSEL PHOTOS ── -->
+    <div class="photos-carousel-wrap">
+      <div class="photos-carousel-track">
+        <!-- original set -->
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 1.png"   alt="Photo 1" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 2.jpeg"  alt="Photo 2" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 3.png"   alt="Photo 3" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 4.png"   alt="Photo 4" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 5.png"   alt="Photo 5" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 6.jpeg"  alt="Photo 6" /></div>
+        <!-- duplicate for seamless loop -->
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 1.png"   alt="Photo 1" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 2.jpeg"  alt="Photo 2" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 3.png"   alt="Photo 3" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 4.png"   alt="Photo 4" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 5.png"   alt="Photo 5" /></div>
+        <div class="photos-carousel-card"><img src="ressource/PHOTO 6.jpeg"  alt="Photo 6" /></div>
+      </div>
+    </div>
+
+    <!-- ── ICONE 1 — séparateur ── -->
+    <div class="section-icon">
+      <img src="ressource/ICONE 1.png" alt="" aria-hidden="true" />
+    </div>
+
     <!-- ── PHASE 3 — COMPTE À REBOURS ── -->
     <section id="phase3">
       <div class="phase3-bg"></div>
       <div class="phase3-card">
         <p class="phase3-pretitle reveal">Le grand jour approche</p>
         <h2 class="phase3-title reveal">Compte à rebours</h2>
-        <p class="phase3-sub reveal">jusqu'au 16 Mai 2026</p>
+        <p class="phase3-sub reveal">jusqu'au 17 Août 2026</p>
 
         <div class="countdown-wrap reveal">
           <div class="countdown-item">
@@ -951,6 +1040,11 @@ scellant l'union de leurs enfants.</p>
       </div>
     </section>
 
+    <!-- ── ICONE 2 — séparateur ── -->
+    <div class="section-icon">
+      <img src="ressource/ICONE 2.png" alt="" aria-hidden="true" />
+    </div>
+
     <!-- ══════════════════════════════════════════
          PHASE 5 — LOCALISATION
     ══════════════════════════════════════════ -->
@@ -959,10 +1053,10 @@ scellant l'union de leurs enfants.</p>
       <h2 class="p5-title reveal">Localisation</h2>
 
       <div class="p5-location-block reveal">
-        <p class="p5-loc-label">Hôtel Mirabelle — Réception</p>
+        <p class="p5-loc-label">Sofitel Abidjan Hôtel Ivoire — Grande Salle de réception</p>
         <div class="p5-map-wrap">
           <iframe
-            src="https://maps.google.com/maps?q=Hotel+Mirabelle+Dimbokro+Cote+d%27Ivoire&output=embed"
+            src="https://maps.google.com/maps?q=Sofitel+Abidjan+Hotel+Ivoire+Abidjan+Cote+d%27Ivoire&output=embed"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -971,15 +1065,22 @@ scellant l'union de leurs enfants.</p>
       </div>
 
       <div class="p5-location-block reveal">
-        <p class="p5-loc-label">Domicile familial — Cérémonie de dot</p>
-        <a class="p5-map-link" href="https://goo.gl/maps/ua8iigo9BK5uziSF7?g_st=aw" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/>
-          </svg>
-          Voir sur Google Maps
-        </a>
+        <p class="p5-loc-label">Domicile familial — Cocody, Abidjan</p>
+        <div class="p5-map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=Cocody+Abidjan+Cote+d%27Ivoire&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </section>
+
+    <!-- ── ICONE 3 — séparateur ── -->
+    <div class="section-icon">
+      <img src="ressource/ICONE 3.png" alt="" aria-hidden="true" />
+    </div>
 
     <!-- ══════════════════════════════════════════
          PHASE 6 — PROGRAMME
@@ -1095,16 +1196,20 @@ scellant l'union de leurs enfants.</p>
       </div>
       <div class="contacts-grid reveal">
         <div class="contact-card">
-          <p class="contact-name">Madame SUY</p>
-          <a class="contact-phone" href="tel:+2250777211903">+225 07 77 211 903</a>
+          <p class="contact-name">Nadia TOURÉ</p>
+          <a class="contact-phone" href="tel:+2250758342196">+225 07 58 34 21 96</a>
         </div>
         <div class="contact-card">
-          <p class="contact-name">Priam SAUCIÉ</p>
-          <a class="contact-phone" href="tel:+2250778118384">+225 07 78 118 384</a>
+          <p class="contact-name">Stéphane EBOUA</p>
+          <a class="contact-phone" href="tel:+2250547832014">+225 05 47 83 20 14</a>
         </div>
-          <div class="contact-card">
-          <p class="contact-name">Diomandé Kouity</p>
-          <a class="contact-phone" href="tel:+2250778118384">+225 01 10 66 08</a>
+        <div class="contact-card">
+          <p class="contact-name">Raïssa KOFFI</p>
+          <a class="contact-phone" href="tel:+2250172653890">+225 01 72 65 38 90</a>
+        </div>
+        <div class="contact-card">
+          <p class="contact-name">Armand DIABATÉ</p>
+          <a class="contact-phone" href="tel:+2250769421538">+225 07 69 42 15 38</a>
         </div>
       </div>
     </section>
@@ -1191,7 +1296,7 @@ scellant l'union de leurs enfants.</p>
     /* ────────────────────────────────
        PHASE 3 — COUNTDOWN
     ──────────────────────────────── */
-    const TARGET = new Date('2026-05-16T00:00:00').getTime();
+    const TARGET = new Date('2026-08-17T00:00:00').getTime();
 
     function updateCountdown() {
       const now  = Date.now();
